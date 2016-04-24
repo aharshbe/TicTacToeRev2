@@ -12,6 +12,8 @@ import android.widget.Toast;
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
     //Creating a reference for my buttons
     TextView button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    //Creating new object of textView to ref
+    TextView gameMessage;
     //Creating newGame button
     Button newGame;
     //Creating a button/TextView array to store the buttons
@@ -21,10 +23,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     //Creates an initial counter for the turns and sets it to 0
     int turn_count = 0;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        //Adding reference to game message text
+        gameMessage = (TextView) findViewById(R.id.game_message_text);
+        //gameMessage.setText(p);
         //Linking the buttons/textViews to the xml
         button1 = (TextView) findViewById(R.id.textView);
         button2 = (TextView) findViewById(R.id.textView2);
