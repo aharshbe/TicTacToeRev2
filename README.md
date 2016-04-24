@@ -29,3 +29,18 @@ After doing this, you may fix the identity used for this commit with:
     git commit --amend --reset-author
 
  1 file changed, 5 insertions(+), 2 deletions(-)
+[master e85e80b] YAY! So close now just have the share preferences to go! I got the drawable to come over YES
+ Committer: austin <austin@austins-MacBook.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 17 insertions(+), 4 deletions(-)
