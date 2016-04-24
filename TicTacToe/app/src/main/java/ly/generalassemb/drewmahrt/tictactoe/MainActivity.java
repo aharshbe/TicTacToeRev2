@@ -45,23 +45,23 @@ public class MainActivity extends AppCompatActivity {
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
         //Calling both function to send over using SP
-        sendingOverNameFromSP();
-        storeNamesToSP();
+//        sendingOverNameFromSP();
+//        storeNamesToSP();
 
     }
 
-    private String sendingOverNameFromSP() {
-        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
-        String player1Coming = prefs.getString(player1GetText, "No name sent");
-       // String player2Coming = prefs.getString(player2GetText, null);
-        return player1Coming;
-    }
-
-    private void storeNamesToSP(){
-        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Player1Name", player1GetText);
-        editor.commit();
-
-    }
+//    private String sendingOverNameFromSP() {
+//        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
+//        String player1Coming = prefs.getString(player1GetText, "No name sent");
+//       // String player2Coming = prefs.getString(player2GetText, null);
+//        return player1Coming;
+//    }
+//
+//    private void storeNamesToSP(){
+//        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = prefs.edit();
+//        editor.putString("Player1Name", player1GetText);
+//        editor.commit();
+//
+//    }
 }
