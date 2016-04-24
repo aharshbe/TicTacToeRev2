@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener; //Imports the ability to implement OnClick
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     //Creating a reference for my buttons
     TextView button1, button2, button3, button4, button5, button6, button7, button8, button9;
@@ -37,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
         buttonArray = new TextView[]{button1, button2, button3, button4,  button5, button6, button7,  button8, button9};
 
 
+
+        //Creates a loop for every textView to take an action when clicked
+        for(TextView looppingTextViews : buttonArray){
+
+        }
+
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
