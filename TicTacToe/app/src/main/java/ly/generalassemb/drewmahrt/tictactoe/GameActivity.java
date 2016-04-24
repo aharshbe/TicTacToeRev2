@@ -88,6 +88,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         else if (button7.getText() == button8.getText() && button8.getText() == button9.getText() && !button7.isClickable())
             there_is_a_winner = true;
 
+        //vertical
+        if(button1.getText() == button4.getText() && button4.getText() == button7.getText() && !button1.isClickable())
+            there_is_a_winner = true;
+        else if (button2.getText() == button5.getText() && button5.getText() == button8.getText() && !button2.isClickable())
+            there_is_a_winner = true;
+        else if (button3.getText() == button6.getText() && button6.getText() == button9.getText() && !button3.isClickable())
+            there_is_a_winner = true;
+
+
+
 
         if(there_is_a_winner)
         {
