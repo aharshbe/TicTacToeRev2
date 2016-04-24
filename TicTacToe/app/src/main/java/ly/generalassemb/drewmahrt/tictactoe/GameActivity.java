@@ -115,11 +115,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             }else{
                 toast("O wins");
             }
+            //generic method call
+            resetGame(false);
+
         }
 
+    }
+    //Creates method to reset the game if a player wins
+    private void resetGame(boolean enable){
+       //false to disable
+        for (TextView reset: buttonArray){
+            reset.setClickable(enable);
 
+            //for the color
+            if (enable)
+                reset.setBackgroundColor(Color.CYAN);
+            else
+                reset.setBackgroundColor(Color.GREEN);
+        }
 
     }
+
     private void toast(String message){
         //Making sure the buttons are clickable by creating a toast message
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
