@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
     }
 
     //Creates and intent to sending the user from this activity onto the next.
@@ -35,29 +32,36 @@ public class MainActivity extends AppCompatActivity {
     public void whenStartPlayingClicked(View view) {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(intent);
-
         //Referencing the EditText fields.
         player1 = (EditText) findViewById(R.id.player_one_name);
         player2 = (EditText) findViewById(R.id.player_two_name);
         //Getting the text from the editText field.
         player1GetText= new String(player1.getText().toString());
         player2GetText = new String(player2.getText().toString());
-
+        //Creating a reference for the textViews which show the players name
         player1tv =  (TextView) findViewById(R.id.player1tv);
         player2tv =  (TextView) findViewById(R.id.player2tv);
-
+        //Setting the text of the EditText fields to reflect the two players input
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
-
-
-
-
-
-
+        //Calling both function to send over using SP
+        sendingOverNameFromSP();
+        storeNamesToSP();
 
     }
 
+    private String sendingOverNameFromSP() {
+        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
+        String player1Coming = prefs.getString(player1GetText, "No name sent");
+       // String player2Coming = prefs.getString(player2GetText, null);
+        return player1Coming;
+    }
 
+    private void storeNamesToSP(){
+        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("Player1Name", player1GetText);
+        editor.commit();
 
-
+    }
 }

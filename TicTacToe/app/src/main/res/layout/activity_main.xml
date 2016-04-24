@@ -14,6 +14,7 @@
         android:id="@+id/player_one_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="Enter Player One's Name"
         android:layout_below="@+id/player2tv"
         android:layout_centerHorizontal="true" />
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Player Two's Name"
+        android:textAlignment="center"
         android:layout_below="@+id/player_one_name"
         android:layout_alignLeft="@+id/player_one_name"
         android:layout_alignStart="@+id/player_one_name" />
