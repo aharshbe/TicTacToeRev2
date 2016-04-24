@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         //Creates a loop for every textView to take an action when clicked
         for(TextView looppingTextViews : buttonArray){
 
+            //Sets the onClick and uses the class as the handler for the event
+
+            looppingTextViews.setOnClickListener(this);
+
         }
 
 
