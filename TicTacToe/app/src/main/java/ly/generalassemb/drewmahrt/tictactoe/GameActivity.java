@@ -135,16 +135,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         {
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if(!turn){
-                toast("X wins, AWESOME! :-D");
+                toast("Player 1 wins!");
             }else{
-                toast("O wins! YAY! :-P");
+                toast("Player 2 wins!");
             }
             //generic method call
             resetGame(false);
 
         }else if(turn_count == 9){
             //when all buttons are used and no longer useable
-            toast("Neither player wins sadly :-(");
+            toast("No one wins sadly");
         }
     }
     //Creates method to reset the game if a player wins
@@ -156,15 +156,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //for the color
             if (enable) {
                 reset.setBackgroundColor(Color.GRAY);
+                //Resetting default name to the original first player
+                gameMessage.setText(getIntent().getExtras().getString("player1Name")+ " " + "goes first!");
                 //reset the text to be an empty string
                 reset.setText(" ");
+
 
             }else
                 reset.setBackgroundColor(Color.GREEN);
         }
     }
-    private void toast(String message){
+    private String toast(String message){
         //Making sure the buttons are clickable by creating a toast message
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        return message;
     }
 }
