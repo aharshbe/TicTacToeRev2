@@ -64,6 +64,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //changes the color of the textView to red when player o chooses it
             newButton.setBackgroundColor(Color.RED);
         }
+        //just the increment counter
+        turn_count++;
+
         //fixes the textView from changing when clicked by two players.
         newButton.setClickable(false);
         //changes the turn itself
