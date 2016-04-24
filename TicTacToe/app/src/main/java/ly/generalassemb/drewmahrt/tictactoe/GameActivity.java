@@ -114,13 +114,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         {
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if(!turn){
-                toast("X wins");
+                toast("X wins, AWESOME! :-D");
             }else{
-                toast("O wins");
+                toast("O wins! YAY! :-P");
             }
             //generic method call
             resetGame(false);
 
+        }else if(turn_count == 9){
+            //when all buttons are used and no longer useable
+            toast("Neither player wins sadly :-(");
         }
 
     }
