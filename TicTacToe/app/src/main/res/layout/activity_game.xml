@@ -24,7 +24,8 @@
         android:layout_height="match_parent"
         android:columnCount="3"
         android:rowCount="3"
-        android:layout_below="@+id/game_message_text">
+        android:layout_below="@+id/game_message_text"
+        android:id="@+id/gridLayout">
 
         <TextView
             android:layout_width="100dp"
@@ -144,4 +145,13 @@
             android:background="@drawable/border" />
 
     </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game!"
+        android:id="@+id/button"
+        android:layout_above="@+id/gridLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
