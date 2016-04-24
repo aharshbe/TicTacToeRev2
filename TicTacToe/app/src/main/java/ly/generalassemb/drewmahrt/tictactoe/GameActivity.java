@@ -1,5 +1,6 @@
 package ly.generalassemb.drewmahrt.tictactoe;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //Adding reference to game message text
         gameMessage = (TextView) findViewById(R.id.game_message_text);
         //gameMessage.setText(p);
+        gameMessage.setText(getIntent().getExtras().getString("player1Name"));
+
+
+
+
+
+
+
+
+
+
         //Linking the buttons/textViews to the xml
         button1 = (TextView) findViewById(R.id.textView);
         button2 = (TextView) findViewById(R.id.textView2);
