@@ -14,38 +14,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Creating new instances of EditText and String to references below
+    EditText player1, player2;
+    String player1GetText, player2GetText;
+    TextView player1tv, player2tv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        //Referencing the EditText fields.
-        EditText player_one_name = (EditText) findViewById(R.id.player_one_name);
-        EditText getPlayer_two_name= (EditText) findViewById(R.id.player_two_name);
-
-        //Getting the text from the editText field.
-        String playerOnegetText= new String(player_one_name.getText().toString());
-        String playerTwoGetText = new String(getPlayer_two_name.getText().toString());
-
-
-        //Creating the sharedPreferences to send over the string to the other activity and store them
-        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("austin_is_Awesom", Context.MODE_PRIVATE);
-
-        //To read information for share preferences
-        String person1Name = sharedPref.getString("person1Name",playerOnegetText);
-        String person2Name = sharedPref.getString("person2Name",playerTwoGetText);
-
-        //To save string
-        SharedPreferences.Editor person1 = sharedPref.edit();
-        SharedPreferences.Editor person2 = sharedPref.edit();
-        //Creating a key and assigning the value for each of the editText fields to store the names so they can be used in the Game activity
-        person1.putString(person1Name, playerOnegetText);
-        person2.putString(person2Name, playerTwoGetText);
-        //Commiting the changes to shared preferences
-        person1.commit();
-        person2.commit();
 
 
 
@@ -57,6 +35,24 @@ public class MainActivity extends AppCompatActivity {
     public void whenStartPlayingClicked(View view) {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(intent);
+
+        //Referencing the EditText fields.
+        player1 = (EditText) findViewById(R.id.player_one_name);
+        player2 = (EditText) findViewById(R.id.player_two_name);
+        //Getting the text from the editText field.
+        player1GetText= new String(player1.getText().toString());
+        player2GetText = new String(player2.getText().toString());
+
+        player1tv =  (TextView) findViewById(R.id.player1tv);
+        player2tv =  (TextView) findViewById(R.id.player2tv);
+
+        player1tv.setText(player1GetText);
+        player2tv.setText(player2GetText);
+
+
+
+
+
 
 
     }

@@ -12,32 +12,71 @@
 
     <EditText
         android:id="@+id/player_one_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Player One's Name"/>
+        android:hint="Enter Player One's Name"
+        android:layout_below="@+id/player2tv"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/player_two_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Player Two's Name"
-        android:layout_below="@id/player_one_name"/>
+        android:layout_below="@+id/player_one_name"
+        android:layout_alignLeft="@+id/player_one_name"
+        android:layout_alignStart="@+id/player_one_name" />
 
     <Button
         android:id="@+id/start_game_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Playing!"
-        android:layout_below="@id/player_two_name"
-        android:onClick="whenStartPlayingClicked"/>
+        android:onClick="whenStartPlayingClicked"
+        android:layout_below="@+id/player_two_name"
+        android:layout_alignLeft="@+id/player2tv"
+        android:layout_alignStart="@+id/player2tv" />
 
     <TextView
         android:id="@+id/last_winner_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/start_game_button"
         android:textSize="25sp"
-        android:text="Previous Winner:" />
+        android:text="Previous Winner:"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/player_one_name"
+        android:layout_alignStart="@+id/player_one_name"
+        android:layout_marginBottom="75dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Player one"
+        android:textSize="30sp"
+        android:id="@+id/player1tv"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="VS."
+        android:textSize="30sp"
+        android:fontFamily="cursive"
+        android:textColor="#DC143C"
+
+        android:id="@+id/vs"
+        android:layout_below="@+id/player1tv"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Player two"
+        android:textSize="30sp"
+        android:id="@+id/player2tv"
+        android:layout_below="@+id/vs"
+        android:layout_alignLeft="@+id/player1tv"
+        android:layout_alignStart="@+id/player1tv" />
 
 </RelativeLayout>
