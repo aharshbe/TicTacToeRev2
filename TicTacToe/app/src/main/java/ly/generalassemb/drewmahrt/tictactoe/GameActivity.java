@@ -62,6 +62,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             newButton.setText("O");
         }
         //changes the turn itself
+        newButton.setClickable(false);
         turn = !turn;
 
 
