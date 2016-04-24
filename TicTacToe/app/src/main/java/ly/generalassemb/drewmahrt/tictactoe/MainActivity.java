@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Creates and intent to sending the user from this activity onto the next.
+    //OnClick created in the XML for ease ;)
 
     public void whenStartPlayingClicked(View view) {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
