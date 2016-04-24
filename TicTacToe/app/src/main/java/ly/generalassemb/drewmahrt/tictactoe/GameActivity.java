@@ -12,6 +12,8 @@ import android.widget.Toast;
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
     //Creating a reference for my buttons
     TextView button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    //Creating newGame button
+    Button newGame;
     //Creating a button/TextView array to store the buttons
     TextView[] buttonArray;
     //X = true, O = false
@@ -33,6 +35,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         button7 = (TextView) findViewById(R.id.textView7);
         button8 = (TextView) findViewById(R.id.textView8);
         button9 = (TextView) findViewById(R.id.textView9);
+        newGame = (Button)findViewById(R.id.newGame);
         //Instantiating the textView array
         buttonArray = new TextView[]{button1, button2, button3, button4,  button5, button6, button7,  button8, button9};
         //Creates a loop for every textView to take an action when clicked
@@ -105,11 +108,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         else if (button3.getText() == button5.getText() && button5.getText() == button7.getText() && !button3.isClickable())
             there_is_a_winner = true;
 
-
-
-
-
-
         if(there_is_a_winner)
         {
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
@@ -125,7 +123,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //when all buttons are used and no longer useable
             toast("Neither player wins sadly :-(");
         }
-
     }
     //Creates method to reset the game if a player wins
     private void resetGame(boolean enable){
@@ -139,11 +136,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             else
                 reset.setBackgroundColor(Color.GREEN);
         }
-
     }
-
     private void toast(String message){
         //Making sure the buttons are clickable by creating a toast message
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void newGameClick(View view) {
     }
 }
