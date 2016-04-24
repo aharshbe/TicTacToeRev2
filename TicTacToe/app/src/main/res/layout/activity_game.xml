@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ly.generalassemb.drewmahrt.tictactoe.GameActivity">
+    tools:context="ly.generalassemb.drewmahrt.tictactoe.GameActivity"
+    android:background="#F5F5DC">
 
     <TextView
         android:id="@+id/game_message_text"
@@ -17,7 +18,8 @@
         android:layout_centerHorizontal="true"
         android:paddingBottom="100dp"
         android:text="Player One&apos;s Turn"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:textColor="#0000FF"/>
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -154,5 +156,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="newGameClick"
-        android:text="New Game!" />
+        android:text="New Game!"
+        android:background="#3CB371"
+        android:textColor="#F5FFFA"/>
 </RelativeLayout>

@@ -1,8 +1,10 @@
 package ly.generalassemb.drewmahrt.tictactoe;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -135,11 +137,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
                 toast("Player 1 wins!");
+                gameMessage.setText("Play again?");
                 String player1won = new String("Player 1 won previous game");
 
             } else {
                 toast("Player 2 wins!");
+                gameMessage.setText("Play again?");
                 String player2won = new String("Player 2 won previous game");
+
 
 
             }
@@ -149,6 +154,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         } else if (turn_count == 9) {
             //when all buttons are used and no longer useable
             toast("No one wins sadly");
+            gameMessage.setText("Play again?");
             String draw = new String("It was a draw");
 
 
@@ -157,6 +163,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //Creates method to reset the game if a player wins
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void resetGame(boolean enable) {
         //false to disable
         for (TextView reset : buttonArray) {
@@ -164,11 +171,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             //for the color
             if (enable) {
-                reset.setBackgroundColor(Color.GRAY);
+                reset.setBackgroundColor(Color.TRANSPARENT);
+                reset.setBackground(getDrawable(R.drawable.border));
                 //Resetting default name to the original first player
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
                 //reset the text to be an empty string
                 reset.setText(" ");
+
 
 
             } else
