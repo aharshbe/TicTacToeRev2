@@ -28,7 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Playing!"
-        android:layout_below="@id/player_two_name"/>
+        android:layout_below="@id/player_two_name"
+        android:onClick="whenStartPlayingClicked"/>
 
     <TextView
         android:id="@+id/last_winner_text"
