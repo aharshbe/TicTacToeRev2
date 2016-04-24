@@ -80,11 +80,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         boolean there_is_a_winner = false;
 
         //checks horozontal numbers
-        if(button1.getText() == button2.getText() && button2.getText() == button3.getText())
+        //by adding that the first button is not clickable it got it to work instead of always saying one is winning when clicked
+        if(button1.getText() == button2.getText() && button2.getText() == button3.getText() && !button1.isClickable())
             there_is_a_winner = true;
-        else if (button4.getText() == button5.getText() && button5.getText() == button6.getText())
+        else if (button4.getText() == button5.getText() && button5.getText() == button6.getText() && !button4.isClickable())
             there_is_a_winner = true;
-        else if (button7.getText() == button8.getText() && button8.getText() == button9.getText())
+        else if (button7.getText() == button8.getText() && button8.getText() == button9.getText() && !button7.isClickable())
             there_is_a_winner = true;
 
 
