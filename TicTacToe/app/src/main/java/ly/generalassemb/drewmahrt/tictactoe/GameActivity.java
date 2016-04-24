@@ -43,6 +43,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //Sets the onClick and uses the class as the handler for the event
             looppingTextViews.setOnClickListener(this);
         }
+
+        //Creates onClick listener for the newGame button
+        newGame.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //to reset turns and re-initialize all buttons
+                turn = true;
+                turn_count = 0;
+                resetGame(true);
+
+            }
+        });
     }
     @Override
     public void onClick(View v) {
@@ -76,9 +88,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         turn = !turn;
 
         checkForWinner();
-
-
-
     }
 
     private void checkForWinner(){
@@ -131,17 +140,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             reset.setClickable(enable);
 
             //for the color
-            if (enable)
-                reset.setBackgroundColor(Color.CYAN);
-            else
+            if (enable) {
+                reset.setBackgroundColor(Color.GRAY);
+                //reset the text to be an empty string
+                reset.setText(" ");
+            }else
                 reset.setBackgroundColor(Color.GREEN);
         }
     }
     private void toast(String message){
         //Making sure the buttons are clickable by creating a toast message
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void newGameClick(View view) {
     }
 }
