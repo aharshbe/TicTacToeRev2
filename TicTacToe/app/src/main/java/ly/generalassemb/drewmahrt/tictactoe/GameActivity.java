@@ -33,15 +33,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //Adding reference to game message text
         gameMessage = (TextView) findViewById(R.id.game_message_text);
         //gameMessage.setText(p);
-        gameMessage.setText(getIntent().getExtras().getString("player1Name"));
-
-
-
-
-
-
-
-
 
 
         //Linking the buttons/textViews to the xml
@@ -88,11 +79,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         //A boolean that changes the text on the textview to either x or o depending on whose turn it is
         if(turn){
+            gameMessage.setText(getIntent().getExtras().getString("player1Name"));
             //X's turn
             newButton.setText("X");
             //changes the color of the textView to blue when player x chooses it
             newButton.setBackgroundColor(Color.BLUE);
         }else {
+            gameMessage.setText(getIntent().getExtras().getString("player2Name"));
             //O's turn
             newButton.setText("O");
             //changes the color of the textView to red when player o chooses it
