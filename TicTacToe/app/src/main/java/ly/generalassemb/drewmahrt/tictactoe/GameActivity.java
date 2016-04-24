@@ -58,12 +58,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if(turn){
             //X's turn
             newButton.setText("X");
+            //changes the color of the textView to blue when player x chooses it
+            newButton.setBackgroundColor(Color.BLUE);
         }else {
             //O's turn
             newButton.setText("O");
+            //changes the color of the textView to red when player o chooses it
+            newButton.setBackgroundColor(Color.RED);
         }
-        //changes the color of the button when clicked so that it's painful oby it's already been taken by other user
-        newButton.setBackgroundColor(Color.RED);
         //fixes the textView from changing when clicked by two players.
         newButton.setClickable(false);
         //changes the turn itself
