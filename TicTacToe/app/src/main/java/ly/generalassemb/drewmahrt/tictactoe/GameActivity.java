@@ -44,8 +44,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         //method called when person clicks
-        //calling the toast message and assigning it  a message when clicked.
-        toast("TextView Button clicked");
         //Instantiates a new textView so that we can pass it as a parameter in the following method call
         TextView newButton = (TextView) v;
         //Calls the button clicked method on every click
@@ -70,6 +68,35 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         newButton.setClickable(false);
         //changes the turn itself
         turn = !turn;
+
+        checkForWinner();
+
+
+
+    }
+
+    private void checkForWinner(){
+
+        boolean there_is_a_winner = false;
+
+        //checks horozontal numbers
+        if(button1.getText() == button2.getText() && button2.getText() == button3.getText())
+            there_is_a_winner = true;
+        else if (button4.getText() == button5.getText() && button5.getText() == button6.getText())
+            there_is_a_winner = true;
+        else if (button7.getText() == button8.getText() && button8.getText() == button9.getText())
+            there_is_a_winner = true;
+
+
+        if(there_is_a_winner)
+        {
+            //because turn is reversed up at the top, you have to reverse the boolean, hence the !
+            if(!turn){
+                toast("X wins");
+            }else{
+                toast("O wins");
+            }
+        }
 
 
 
