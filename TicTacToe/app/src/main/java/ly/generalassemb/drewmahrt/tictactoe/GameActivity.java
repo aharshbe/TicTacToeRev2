@@ -13,6 +13,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     TextView button1, button2, button3, button4, button5, button6, button7, button8, button9;
     //Creating a button/TextView array to store the buttons
     TextView[] buttonArray;
+    //X = true, O = false
+    boolean turn = true;
+    //Creates an initial counter for the turns and sets it to 0
+    int turn_count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void buttonClicked(TextView newButton){
+
+        //A boolean that changes the text on the textview to either x or o depending on whose turn it is
+        if(turn){
+            //X's turn
+            newButton.setText("X");
+        }else {
+            //O's turn
+            newButton.setText("O");
+        }
+        //changes the turn itself
+        turn = !turn;
+
+
 
     }
     private void toast(String message){
