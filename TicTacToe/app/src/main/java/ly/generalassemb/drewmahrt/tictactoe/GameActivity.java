@@ -1,5 +1,6 @@
 package ly.generalassemb.drewmahrt.tictactoe;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -61,8 +62,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //O's turn
             newButton.setText("O");
         }
-        //changes the turn itself
+        //changes the color of the button when clicked so that it's painful oby it's already been taken by other user
+        newButton.setBackgroundColor(Color.RED);
+        //fixes the textView from changing when clicked by two players.
         newButton.setClickable(false);
+        //changes the turn itself
         turn = !turn;
 
 
