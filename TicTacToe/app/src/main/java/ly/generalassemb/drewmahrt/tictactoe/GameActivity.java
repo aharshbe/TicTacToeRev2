@@ -143,12 +143,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
-                gameMessage.setText("Player 1 wins!");
+                gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
                 String player1won = new String("Player 1 won previous game");
 
             } else {
                 toast("Play Again? ..Click New Game!");
-                gameMessage.setText("Player 2 wins!");
+                gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
                 String player2won = new String("Player 2 won previous game");
 
 
