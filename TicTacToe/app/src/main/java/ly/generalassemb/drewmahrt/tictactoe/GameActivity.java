@@ -88,6 +88,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //changes the color of the textView to blue when player x chooses it
             newButton.setBackgroundColor(Color.BLUE);
         } else {
+            //intending over players name
             gameMessage.setText(getIntent().getExtras().getString("player1Name") + "'s" + " " + "turn!");
             //O's turn
             newButton.setText("O");
@@ -136,13 +137,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (there_is_a_winner) {
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
-                toast("Player 1 wins!");
-                gameMessage.setText("Play again?");
+                toast("Play Again?");
+                gameMessage.setText("Player 1 wins!");
                 String player1won = new String("Player 1 won previous game");
 
             } else {
-                toast("Player 2 wins!");
-                gameMessage.setText("Play again?");
+                toast("Play Again?");
+                gameMessage.setText("Player 2 wins!");
                 String player2won = new String("Player 2 won previous game");
 
 
@@ -153,8 +154,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (turn_count == 9) {
             //when all buttons are used and no longer useable
-            toast("No one wins sadly");
-            gameMessage.setText("Play again?");
+            toast("Play Again?");
+            gameMessage.setText("No one wins sadly");
             String draw = new String("It was a draw");
 
 
