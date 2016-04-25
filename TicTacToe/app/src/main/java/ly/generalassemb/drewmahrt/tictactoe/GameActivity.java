@@ -82,7 +82,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         //A boolean that changes the text on the textview to either x or o depending on whose turn it is
         if (turn) {
+            //intending over players name
             gameMessage.setText(getIntent().getExtras().getString("player2Name") + "'s" + " " + "turn!");
+            //changing color of text to match player
+            gameMessage.setTextColor(Color.MAGENTA);
             //X's turn
             newButton.setText("X");
             //changes the color of the textView to blue when player x chooses it
@@ -90,6 +93,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             //intending over players name
             gameMessage.setText(getIntent().getExtras().getString("player1Name") + "'s" + " " + "turn!");
+            //changing color of text to match player
+            gameMessage.setTextColor(Color.BLUE);
             //O's turn
             newButton.setText("O");
             //changes the color of the textView to red when player o chooses it
@@ -188,7 +193,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private String toast(String message) {
         //Making sure the buttons are clickable by creating a toast message
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         return message;
     }
 
