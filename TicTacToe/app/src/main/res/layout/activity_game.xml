@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:paddingBottom="100dp"
+        android:fontFamily="cursive"
         android:text="Player One&apos;s Turn"
         android:textSize="40sp"
         android:textColor="#0000FF"/>
