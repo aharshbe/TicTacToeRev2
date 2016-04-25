@@ -36,11 +36,12 @@
         android:layout_height="wrap_content"
         android:onClick="whenStartPlayingClicked"
         android:text="Start Playing!"
-        android:layout_marginTop="45dp"
         android:background="#3CB371"
         android:textColor="#F5FFFA"
-        android:layout_below="@+id/player_two_name"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/last_winner_text"
+        android:layout_alignLeft="@+id/vs"
+        android:layout_alignStart="@+id/vs"
+        android:layout_marginBottom="75dp" />
 
     <TextView
         android:id="@+id/last_winner_text"
@@ -61,7 +62,7 @@
         android:fontFamily="casual"
         android:text="Player one"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="45sp"
         android:textColor="#0000FF"/>
 
     <TextView
@@ -73,7 +74,7 @@
         android:fontFamily="cursive"
         android:text="VS."
         android:textColor="#DC143C"
-        android:textSize="30sp" />
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/player2tv"
@@ -86,6 +87,6 @@
         android:text="Player two"
         android:textColor="#FF00FF"
         android:textStyle="bold"
-        android:textSize="30sp" />
+        android:textSize="45sp" />
 
 </RelativeLayout>
