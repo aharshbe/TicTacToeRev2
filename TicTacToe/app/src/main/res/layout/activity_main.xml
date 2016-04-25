@@ -62,7 +62,7 @@
         android:fontFamily="casual"
         android:text="Player one"
         android:textStyle="bold"
-        android:textSize="45sp"
+        android:textSize="30sp"
         android:textColor="#0000FF"/>
 
     <TextView
@@ -87,6 +87,6 @@
         android:text="Player two"
         android:textColor="#FF00FF"
         android:textStyle="bold"
-        android:textSize="45sp" />
+        android:textSize="30sp" />
 
 </RelativeLayout>

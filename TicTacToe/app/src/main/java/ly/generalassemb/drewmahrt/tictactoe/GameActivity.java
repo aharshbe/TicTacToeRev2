@@ -38,6 +38,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //gameMessage.setText(p);
         //Setting the textview to the initial first players name!
         gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
+        //Calling method that saves the shared pref
+        sendingOverNameFromSP();
 
         //Linking the buttons/textViews to the xml
         button1 = (TextView) findViewById(R.id.textView);
@@ -150,24 +152,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
                 String player2won = new String("Player 2 won previous game");
-
-
-
             }
             //generic method call
             resetGame(false);
-
         } else if (turn_count == 9) {
             //when all buttons are used and no longer useable
             toast("Play Again? ..Click New Game!");
             gameMessage.setText("It's a draw! New Game?");
             String draw = new String("It was a draw");
-
-
         }
-
     }
-
     //Creates method to reset the game if a player wins
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void resetGame(boolean enable) {
@@ -183,9 +177,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
                 //reset the text to be an empty string
                 reset.setText(" ");
-
-
-
             } else
                 reset.setBackgroundColor(Color.GREEN);
         }
@@ -213,10 +204,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 //
 //    }
 
-    private String sendingOverNameFromSP() {
+    private void sendingOverNameFromSP() {
         SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
-        String winningPlayer = prefs.getString("winning player", "Player 1 won previous match");
-        return winningPlayer;
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("No Winner", gameMessage.getText().toString());
+        editor.commit();
     }
 
 }

@@ -15,13 +15,24 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //Creating new instances of EditText and String to references below
     EditText player1, player2;
-    String player1GetText, player2GetText;
+    String player1GetText, player2GetText, lastWinnerGetText;
     TextView player1tv, player2tv;
+    TextView lastWinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
+        prefs.getString("No Winner", "" );
+        lastWinner = (TextView) findViewById(R.id.last_winner_text);
+        lastWinnerGetText = new String(prefs.getString("No Winner", "" ));
+        //Setting the text of the SP to the textView that displays the winner
+        lastWinner.setText(lastWinnerGetText);
+
+
+
     }
     //Creates and intent to sending the user from this activity onto the next.
     //OnClick created in the XML for ease ;)
@@ -34,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         //Getting the text from the editText field.
         player1GetText = new String(player1.getText().toString());
         player2GetText = new String(player2.getText().toString());
+        //Creating the reference point for the lastWinner textView
 
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
         intent.putExtra("player1Name", player1.getText().toString());
@@ -46,23 +58,5 @@ public class MainActivity extends AppCompatActivity {
         //Setting the text of the EditText fields to reflect the two players input
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
-        //Calling both function to send over using SP
-//        sendingOverNameFromSP();
-//        storeNamesToSP();
     }
-
-    private String sendingOverNameFromSP() {
-        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
-        String player1Coming = prefs.getString(player1GetText, "No name sent");
-        // String player2Coming = prefs.getString(player2GetText, null);
-        return player1Coming;
-    }
-//
-//    private void storeNamesToSP(){
-//        SharedPreferences prefs = getSharedPreferences("PlayersNames", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = prefs.edit();
-//        editor.putString("Player1Name", player1GetText);
-//        editor.commit();
-//
-//    }
 }
