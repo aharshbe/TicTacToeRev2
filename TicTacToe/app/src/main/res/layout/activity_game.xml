@@ -8,8 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ly.generalassemb.drewmahrt.tictactoe.GameActivity"
-    android:background="#F5F5DC">
+    tools:context="ly.generalassemb.drewmahrt.tictactoe.GameActivity">
 
     <TextView
         android:id="@+id/game_message_text"
