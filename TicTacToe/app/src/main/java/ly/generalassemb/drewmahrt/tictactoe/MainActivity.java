@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
         lastWinnerGetText = new String(prefs.getString("No Winner", "" ));
         //Setting the text of the SP to the textView that displays the winner
         lastWinner.setText(lastWinnerGetText);
-
-
-
     }
     //Creates and intent to sending the user from this activity onto the next.
     //OnClick created in the XML for ease ;)
@@ -58,5 +55,17 @@ public class MainActivity extends AppCompatActivity {
         //Setting the text of the EditText fields to reflect the two players input
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
+        prefs.getString("No Winner", "" );
+        lastWinner = (TextView) findViewById(R.id.last_winner_text);
+        lastWinnerGetText = new String(prefs.getString("No Winner", "" ));
+        //Setting the text of the SP to the textView that displays the winner
+        lastWinner.setText(lastWinnerGetText);
+
     }
 }

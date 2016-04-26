@@ -188,22 +188,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         return message;
     }
 
-
-//    private String winningPlayer() {
-//        if (checkForWinner() == "Player 1 won previous game"){
-//            return player1won;
-//
-//        }else if (checkForWinner() == "Player 2 won previous game"){
-//            String player2won = new String ("Player 2 won previous game");
-//            return player2won;
-//
-//        }
-//
-//        String draw = new String ("It was a draw!");
-//        return draw;
-//
-//    }
-
     private void sendingOverNameFromSP() {
         SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
