@@ -38,8 +38,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //gameMessage.setText(p);
         //Setting the textview to the initial first players name!
         gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
+        gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
         //Calling method that saves the shared pref
-        sendingOverNameFromSP();
+
 
         //Linking the buttons/textViews to the xml
         button1 = (TextView) findViewById(R.id.textView);
@@ -142,16 +143,22 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
 
         if (there_is_a_winner) {
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ShareKey", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
                 String player1won = new String("Player 1 won previous game");
+                editor.putString("WinningPlayer", player1won);
+                editor.commit();
 
             } else {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
                 String player2won = new String("Player 2 won previous game");
+                editor.putString("WinningPlayer", player2won);
+                editor.commit();
             }
             //generic method call
             resetGame(false);
@@ -159,6 +166,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //when all buttons are used and no longer useable
             toast("Play Again? ..Click New Game!");
             gameMessage.setText("It's a draw! New Game?");
+
             String draw = new String("It was a draw");
         }
     }
@@ -188,11 +196,5 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         return message;
     }
 
-    private void sendingOverNameFromSP() {
-        SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("No Winner", gameMessage.getText().toString());
-        editor.commit();
-    }
 
 }

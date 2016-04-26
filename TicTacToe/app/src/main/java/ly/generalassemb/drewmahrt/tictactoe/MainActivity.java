@@ -18,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
     String player1GetText, player2GetText, lastWinnerGetText;
     TextView player1tv, player2tv;
     TextView lastWinner;
+    String winningPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
-        prefs.getString("No Winner", "" );
         lastWinner = (TextView) findViewById(R.id.last_winner_text);
-        lastWinnerGetText = new String(prefs.getString("No Winner", "" ));
         //Setting the text of the SP to the textView that displays the winner
-        lastWinner.setText(lastWinnerGetText);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+        winningPlayer = sharedPreferences.getString("WinningPlayer", "");
+        lastWinner.setText(winningPlayer);
     }
     //Creates and intent to sending the user from this activity onto the next.
     //OnClick created in the XML for ease ;)
@@ -56,16 +56,14 @@ public class MainActivity extends AppCompatActivity {
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences prefs = getSharedPreferences("WinningPlayer", MODE_PRIVATE);
-        prefs.getString("No Winner", "" );
         lastWinner = (TextView) findViewById(R.id.last_winner_text);
-        lastWinnerGetText = new String(prefs.getString("No Winner", "" ));
         //Setting the text of the SP to the textView that displays the winner
-        lastWinner.setText(lastWinnerGetText);
-
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+        winningPlayer = String.valueOf(sharedPreferences.getString("WinningPlayer", ""));
+        lastWinner.setText(winningPlayer);
     }
+
 }
