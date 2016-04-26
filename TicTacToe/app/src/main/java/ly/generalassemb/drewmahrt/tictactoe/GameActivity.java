@@ -143,13 +143,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
 
         if (there_is_a_winner) {
+
+            //Creates the shared pref to send over the name.
             SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ShareKey", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
                 String player1won = new String("Player 1 won previous game");
+
                 editor.putString("WinningPlayer", player1won);
                 editor.commit();
 
@@ -157,6 +161,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
                 String player2won = new String("Player 2 won previous game");
+
                 editor.putString("WinningPlayer", player2won);
                 editor.commit();
             }
@@ -166,10 +171,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //when all buttons are used and no longer useable
             toast("Play Again? ..Click New Game!");
             gameMessage.setText("It's a draw! New Game?");
-
             String draw = new String("It was a draw");
+
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ShareKey", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("WinningPlayer", draw);
+            editor.commit();
+
+
         }
     }
+
     //Creates method to reset the game if a player wins
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void resetGame(boolean enable) {

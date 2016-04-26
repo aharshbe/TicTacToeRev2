@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         player1tv.setText(player1GetText);
         player2tv.setText(player2GetText);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
