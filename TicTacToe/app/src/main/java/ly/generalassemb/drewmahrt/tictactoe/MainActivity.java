@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         lastWinner = (TextView) findViewById(R.id.last_winner_text);
         //Setting the text of the SP to the textView that displays the winner
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+        sharedPreferences.getString("WinningPlayer", "");
         winningPlayer = sharedPreferences.getString("WinningPlayer", "");
         lastWinner.setText(winningPlayer);
     }
@@ -59,9 +60,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+        sharedPreferences.getString("WinningPlayer", "");
         lastWinner = (TextView) findViewById(R.id.last_winner_text);
         //Setting the text of the SP to the textView that displays the winner
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+
         winningPlayer = String.valueOf(sharedPreferences.getString("WinningPlayer", ""));
         lastWinner.setText(winningPlayer);
     }

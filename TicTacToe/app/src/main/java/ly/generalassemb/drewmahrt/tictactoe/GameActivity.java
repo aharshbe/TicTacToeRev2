@@ -28,6 +28,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     boolean turn = true;
     //Creates an initial counter for the turns and sets it to 0
     int turn_count = 0;
+    String player1won, player2won;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,16 +151,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
-                String player1won = new String("Player 1 won previous game");
-
+                player1won = String.valueOf("Player 1 won previous game");
                 editor.putString("WinningPlayer", player1won);
                 editor.commit();
 
             } else {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
-                String player2won = new String("Player 2 won previous game");
-
+                player2won = String.valueOf("Player 2 won previous game");
                 editor.putString("WinningPlayer", player2won);
                 editor.commit();
             }
