@@ -144,7 +144,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (there_is_a_winner) {
 
             //Creates the shared pref to send over the name.
-            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ShareKey", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
 
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !

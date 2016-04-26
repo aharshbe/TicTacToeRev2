@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     TextView lastWinner;
     String winningPlayer;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         lastWinner = (TextView) findViewById(R.id.last_winner_text);
         //Setting the text of the SP to the textView that displays the winner
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
-        sharedPreferences.getString("WinningPlayer", "");
-        winningPlayer = sharedPreferences.getString("WinningPlayer", "");
-        lastWinner.setText(winningPlayer);
+//        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+//        sharedPreferences.getString("WinningPlayer", "");
+//        winningPlayer = sharedPreferences.getString("WinningPlayer", "");
+//        lastWinner.setText(winningPlayer);
     }
     //Creates and intent to sending the user from this activity onto the next.
     //OnClick created in the XML for ease ;)
