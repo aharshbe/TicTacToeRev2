@@ -151,14 +151,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
-                player1won = "Player 1 won previous game";
+                player1won = getIntent().getExtras().getString("player1Name") + " " + "won previous game!!";
                 editor.putString("WinningPlayer", player1won);
                 editor.commit();
 
             } else {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
-                player2won = "Player 2 won previous game";
+                player2won = getIntent().getExtras().getString("player2Name") + " " + "won previous game!!";
                 editor.putString("WinningPlayer", player2won);
                 editor.commit();
             }
@@ -168,9 +168,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //when all buttons are used and no longer useable
             toast("Play Again? ..Click New Game!");
             gameMessage.setText("It's a draw! New Game?");
-            String draw = new String("It was a draw");
+            String draw = new String("Last game was a draw");
 
-            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ShareKey", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.PREFERENCES_KEY, MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("WinningPlayer", draw);
             editor.commit();
