@@ -41,7 +41,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "goes first!");
         //Calling method that saves the shared pref
 
-
         //Linking the buttons/textViews to the xml
         button1 = (TextView) findViewById(R.id.textView);
         button2 = (TextView) findViewById(R.id.textView2);
@@ -141,7 +140,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         else if (button3.getText() == button5.getText() && button5.getText() == button7.getText() && !button3.isClickable())
             there_is_a_winner = true;
 
-
         if (there_is_a_winner) {
 
             //Creates the shared pref to send over the name.
@@ -177,11 +175,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("WinningPlayer", draw);
             editor.commit();
-
-
         }
     }
-
     //Creates method to reset the game if a player wins
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void resetGame(boolean enable) {
@@ -201,12 +196,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 reset.setBackgroundColor(Color.GREEN);
         }
     }
-
     private String toast(String message) {
         //Making sure the buttons are clickable by creating a toast message
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         return message;
     }
-
-
 }
