@@ -144,21 +144,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (there_is_a_winner) {
 
             //Creates the shared pref to send over the name.
-            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("SharedKey", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.PREFERENCES_KEY, MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
 
             //because turn is reversed up at the top, you have to reverse the boolean, hence the !
             if (!turn) {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
-                player1won = String.valueOf("Player 1 won previous game");
+                player1won = "Player 1 won previous game";
                 editor.putString("WinningPlayer", player1won);
                 editor.commit();
 
             } else {
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
-                player2won = String.valueOf("Player 2 won previous game");
+                player2won = "Player 2 won previous game";
                 editor.putString("WinningPlayer", player2won);
                 editor.commit();
             }
