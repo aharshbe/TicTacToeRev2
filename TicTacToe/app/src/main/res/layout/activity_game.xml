@@ -19,7 +19,7 @@
         android:paddingBottom="100dp"
         android:fontFamily="cursive"
         android:text="Player One&apos;s Turn"
-        android:textSize="45sp"
+        android:textSize="25sp"
         android:textColor="#F5FFFA"/>
 
     <GridLayout
