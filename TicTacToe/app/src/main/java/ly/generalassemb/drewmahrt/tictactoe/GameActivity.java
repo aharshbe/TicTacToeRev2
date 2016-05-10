@@ -92,12 +92,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             //X's turn
             newButton.setText("X");
             //changes the color of the textView to blue when player x chooses it
-            newButton.setBackgroundColor(Color.BLUE);
+            newButton.setBackgroundColor(Color.WHITE);
         } else {
             //intending over players name
             gameMessage.setText(getIntent().getExtras().getString("player1Name") + "'s" + " " + "turn!");
             //changing color of text to match player
-            gameMessage.setTextColor(Color.BLUE);
+            gameMessage.setTextColor(Color.WHITE);
             //O's turn
             newButton.setText("O");
             //changes the color of the textView to red when player o chooses it
