@@ -3,6 +3,7 @@ package ly.generalassemb.drewmahrt.tictactoe;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -14,6 +15,7 @@ public class Splash extends AppCompatActivity {
 
     ImageView background2, icon;
     TextView welcome, to, news, urdaily;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,7 @@ public class Splash extends AppCompatActivity {
         news = (TextView) findViewById(R.id.newhag);
         urdaily = (TextView) findViewById(R.id.your);
 
-
-
-
+        mp = MediaPlayer.create(getBaseContext(), R.raw.openingsound);
 
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
@@ -41,6 +41,7 @@ public class Splash extends AppCompatActivity {
         animation2.setDuration(2000);
 
         icon.setAnimation(animation2);
+
 
         Animation animation3 = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_in_left);
         animation3.setDuration(2600);
@@ -57,14 +58,12 @@ public class Splash extends AppCompatActivity {
 
         news.setAnimation(animation5);
 
+        mp.start();
+
         Animation animation6 = AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.slide_out_right);
         animation6.setDuration(2700);
 
         urdaily.setAnimation(animation6);
-
-
-
-
 
 
         Thread background = new Thread() {
