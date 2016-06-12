@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -151,6 +152,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player1Name") + " " + "Wins!");
                 player1won = getIntent().getExtras().getString("player1Name") + " " + "won previous game!!";
+                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.win);
+                mediaPlayer.start();
                 editor.putString("WinningPlayer", player1won);
                 editor.commit();
 
@@ -158,6 +161,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 toast("Play Again? ..Click New Game!");
                 gameMessage.setText(getIntent().getExtras().getString("player2Name") + " " + "Wins!");
                 player2won = getIntent().getExtras().getString("player2Name") + " " + "won previous game!!";
+                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.win);
+                mediaPlayer.start();
                 editor.putString("WinningPlayer", player2won);
                 editor.commit();
             }
@@ -171,6 +176,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.PREFERENCES_KEY, MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.sad);
+            mediaPlayer.start();
             editor.putString("WinningPlayer", draw);
             editor.commit();
         }
