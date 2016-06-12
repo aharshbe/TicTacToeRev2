@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_noback"
+        android:icon="@mipmap/ic_launcher_gr"
         android:label="Ticky Tac"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
