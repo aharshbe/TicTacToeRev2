@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     //Creating new instances of EditText and String to references below
     EditText player1, player2;
     String player1GetText, player2GetText, lastWinnerGetText;
-    TextView player1tv, player2tv;
     TextView lastWinner;
     String winningPlayer;
 
@@ -53,11 +52,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         //Creating a reference for the textViews which show the players name
-        player1tv = (TextView) findViewById(R.id.player1tv);
-        player2tv = (TextView) findViewById(R.id.player2tv);
+
         //Setting the text of the EditText fields to reflect the two players input
-        player1tv.setText(player1GetText);
-        player2tv.setText(player2GetText);
+
     }
     @Override
     protected void onResume() {

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ly.generalassemb.drewmahrt.tictactoe.Splash">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/splash"
+        android:alpha="12"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/iconforanim"
+        android:layout_marginBottom="20dp"
+        android:shadowColor="#eb5c5b"
+        android:layout_marginTop="10dp"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:background="@mipmap/ic_launcher_gr"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It's time to play.."
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:id="@+id/Welcome"
+        android:layout_below="@+id/iconforanim"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ticky"
+        android:textColor="#000"
+        android:textSize="60sp"
+        android:fontFamily="cursive"
+        android:id="@+id/to"
+        android:layout_alignBottom="@+id/newhag"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tac"
+        android:textSize="70sp"
+        android:textColor="#000"
+        android:id="@+id/newhag"
+        android:layout_above="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:fontFamily="cursive"
+        android:textSize="35sp"
+        android:shadowColor="#FFF8DC"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4.5"
+        android:text="...the fun never ends!"
+        android:id="@+id/your"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/letsplay"
+        android:layout_above="@+id/your"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
